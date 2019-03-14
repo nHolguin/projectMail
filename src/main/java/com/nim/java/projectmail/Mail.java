@@ -123,6 +123,11 @@ public class Mail extends javax.swing.JFrame {
         });
 
         checkCPH.setText("CPH");
+        checkCPH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkCPHActionPerformed(evt);
+            }
+        });
 
         checkCPS.setText("CPS");
 
@@ -370,6 +375,21 @@ public class Mail extends javax.swing.JFrame {
             enviar.setText("");
         }
     }//GEN-LAST:event_checkARBActionPerformed
+
+    private void checkCPHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCPHActionPerformed
+        // TODO add your handling code here:
+        if(checkCPH.isSelected() == true) {
+            if(checkARB.isSelected() == true) {
+                enviar.setText(enviar.getText()+"\n\nEste es un CPH!");
+            }
+            else{
+                enviar.setText("Este es un CPH!");
+            }
+        }
+        else if(checkARB.isSelected() == false){
+            enviar.setText("");
+        }
+    }//GEN-LAST:event_checkCPHActionPerformed
 
     /**
      * @param args the command line arguments
