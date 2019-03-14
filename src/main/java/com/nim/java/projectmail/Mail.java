@@ -9,6 +9,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -22,25 +23,32 @@ public class Mail extends javax.swing.JFrame {
         initComponents();
     }
 
+    private String valorARB = "Este es un texto que abre la cabecera";
+    private String valorCPH = "Este es un texto que indica la documentación específica";
+    private String valorCPS = "Este es un texto del slack";
+    private String valorDES = "Este es un textp de desocupados";
+    private String valorCRB = "Este es un texto que cierra la cabecera";
+    private String [] listaMensaje = {"","","","",""};
+
     private void copy(String copiar) {
-        
+
         StringSelection selection = new StringSelection(copiar);
-        
+
         Clipboard resultado = Toolkit.getDefaultToolkit().getSystemClipboard();
-        
+
         resultado.setContents(selection, null);
-    
+
     }
-    
+
     private String paste() {
-        
+
         String resultado = "";
-        
+
         Clipboard valor = Toolkit.getDefaultToolkit().getSystemClipboard();
-        
+
         Transferable contenido = valor.getContents(null);
-        
-        if(contenido.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+
+        if (contenido.isDataFlavorSupported(DataFlavor.stringFlavor)) {
             try {
                 resultado = (String) contenido.getTransferData(DataFlavor.stringFlavor);
             } catch (UnsupportedFlavorException ex) {
@@ -49,11 +57,11 @@ public class Mail extends javax.swing.JFrame {
                 Logger.getLogger(Mail.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
         return resultado;
-        
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -130,10 +138,25 @@ public class Mail extends javax.swing.JFrame {
         });
 
         checkCPS.setText("CPS");
+        checkCPS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkCPSActionPerformed(evt);
+            }
+        });
 
         checkDES.setText("DES");
+        checkDES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkDESActionPerformed(evt);
+            }
+        });
 
         checkCRB.setText("CRB");
+        checkCRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkCRBActionPerformed(evt);
+            }
+        });
 
         pegar.setText("Pegar");
         pegar.setToolTipText("");
@@ -353,7 +376,7 @@ public class Mail extends javax.swing.JFrame {
         // TODO add your handling code here:
         enviar.setText("");
         recibido.setText("");
-        
+
     }//GEN-LAST:event_limpiarTodoActionPerformed
 
     private void limpiarRecibidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarRecibidoActionPerformed
@@ -366,30 +389,136 @@ public class Mail extends javax.swing.JFrame {
         enviar.setText("");
     }//GEN-LAST:event_limpiarEnviarActionPerformed
 
+    private void mostrarMensaje() {
+        
+        String mensaje = "";
+        
+        for(String iterador: listaMensaje) {
+            
+            mensaje = mensaje + "\n\n" + iterador;
+            
+        }
+        
+        enviar.setText(mensaje);
+        
+    }
+    private void eventoCheckbox(int flag) {
+        
+        boolean check = false;
+
+        switch (flag) {
+            case 1:
+                if (checkARB.isSelected() == true) {
+                    check = true;
+                } else if (checkARB.isSelected() == false) {
+                    check = false;
+                }
+                break;
+            case 2:
+                if (checkCPH.isSelected() == true) {
+                    check = true;
+                } else if (checkCPH.isSelected() == false) {
+                    check = false;
+                }
+            break;
+            case 3:
+                if (checkCPS.isSelected() == true) {
+                    check = true;
+                } else if (checkCPS.isSelected() == false) {
+                    check = false;
+                }
+                break;
+            case 4:
+                if (checkDES.isSelected() == true) {
+                    check = true;
+                } else if (checkDES.isSelected() == false) {
+                    check = false;
+                }
+            break;
+            case 5:
+                if (checkCRB.isSelected() == true) {
+                    check = true;
+                } else if (checkCRB.isSelected() == false) {
+                    check = false;
+                }
+                break;
+        }
+
+        if(flag == 1) {
+            if(check == true) {
+                listaMensaje[0] = valorARB;
+            }
+            else {
+                listaMensaje[0] = "";
+            }
+        }
+        
+        if(flag == 2) {
+            if(check == true) {
+                listaMensaje[1] = valorCPH;
+            }
+            else {
+                listaMensaje[1] = "";
+            }
+        }
+        
+        if(flag == 3) {
+            if(check == true) {
+                listaMensaje[2] = valorCPS;
+            }
+            else {
+                listaMensaje[2] = "";
+            }
+        }
+        
+        if(flag == 4) {
+            if(check == true) {
+                listaMensaje[3] = valorDES;
+            }
+            else {
+                listaMensaje[3] = "";
+            }
+        }
+        
+        if(flag == 5) {
+            if(check == true) {
+                listaMensaje[4] = valorCRB;
+            }
+            else {
+                listaMensaje[4] = "";
+            }
+        }
+        
+        mostrarMensaje();
+        //JOptionPane.showMessageDialog(null, listaMensaje);
+
+    }
+
     private void checkARBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkARBActionPerformed
         // TODO add your handling code here:
-        if(checkARB.isSelected() == true) {
-            enviar.setText("Este es un ARB!");
-        }
-        else if(checkARB.isSelected() == false){
-            enviar.setText("");
-        }
+
+        eventoCheckbox(1);
     }//GEN-LAST:event_checkARBActionPerformed
 
     private void checkCPHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCPHActionPerformed
         // TODO add your handling code here:
-        if(checkCPH.isSelected() == true) {
-            if(checkARB.isSelected() == true) {
-                enviar.setText(enviar.getText()+"\n\nEste es un CPH!");
-            }
-            else{
-                enviar.setText("Este es un CPH!");
-            }
-        }
-        else if(checkARB.isSelected() == false){
-            enviar.setText("");
-        }
+        eventoCheckbox(2);
     }//GEN-LAST:event_checkCPHActionPerformed
+
+    private void checkCPSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCPSActionPerformed
+        // TODO add your handling code here:
+        eventoCheckbox(3);
+    }//GEN-LAST:event_checkCPSActionPerformed
+
+    private void checkDESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkDESActionPerformed
+        // TODO add your handling code here:
+        eventoCheckbox(4);
+    }//GEN-LAST:event_checkDESActionPerformed
+
+    private void checkCRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCRBActionPerformed
+        // TODO add your handling code here:
+        eventoCheckbox(5);
+    }//GEN-LAST:event_checkCRBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,15 +558,14 @@ public class Mail extends javax.swing.JFrame {
                 int anchoPantalla = tamanioPantalla.width;
 
                 //setSize(anchoPantalla / 2, altoPantalla / 2);
-
                 Mail mail = new Mail();
                 mail.setTitle("App Mail");
 
                 Image icono = pantalla.getImage("images/mail.png");
                 mail.setIconImage(icono);
-                
-                mail.setLocation(anchoPantalla/4, altoPantalla/4);
-                
+
+                mail.setLocation(anchoPantalla / 4, altoPantalla / 4);
+
                 mail.setVisible(true);
 
                 //new Mail().setVisible(true);

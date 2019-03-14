@@ -200,16 +200,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="CPS"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkCPSActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkDES">
               <Properties>
                 <Property name="text" type="java.lang.String" value="DES"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkDESActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkCRB">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CRB"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkCRBActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="pegar">
               <Properties>
