@@ -10,6 +10,7 @@ import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -28,8 +29,8 @@ public class Mail extends javax.swing.JFrame {
     private String valorCPS = "Este es un texto del slack";
     private String valorDES = "Este es un textp de desocupados";
     private String valorCRB = "Este es un texto que cierra la cabecera";
-    private String [] listaMensaje = {"","","","",""};
-
+    private Hashtable <String, String> listaMensaje = new Hashtable<String, String>();
+ 
     private void copy(String copiar) {
 
         StringSelection selection = new StringSelection(copiar);
@@ -392,11 +393,17 @@ public class Mail extends javax.swing.JFrame {
     private void mostrarMensaje() {
         
         String mensaje = "";
+        String[] claves = (String[]) listaMensaje.keySet().toArray(new String[0]);
         
-        for(String iterador: listaMensaje) {
-            
-            mensaje = mensaje + "\n\n" + iterador;
-            
+        java.util.Arrays.sort(claves);
+        
+        for(String clave: claves) {
+            if(clave == "a") {
+                mensaje += listaMensaje.get(clave)+"\n\n";
+            }
+            else {
+                mensaje += listaMensaje.get(clave)+"\n\n";
+            }
         }
         
         enviar.setText(mensaje);
@@ -446,46 +453,46 @@ public class Mail extends javax.swing.JFrame {
 
         if(flag == 1) {
             if(check == true) {
-                listaMensaje[0] = valorARB;
+                listaMensaje.put("a",valorARB);
             }
             else {
-                listaMensaje[0] = "";
+                listaMensaje.remove("a");
             }
         }
         
         if(flag == 2) {
             if(check == true) {
-                listaMensaje[1] = valorCPH;
+                listaMensaje.put("b",valorCPH);
             }
             else {
-                listaMensaje[1] = "";
+                listaMensaje.remove("b");
             }
         }
         
         if(flag == 3) {
             if(check == true) {
-                listaMensaje[2] = valorCPS;
+                listaMensaje.put("c", valorCPS);
             }
             else {
-                listaMensaje[2] = "";
+                listaMensaje.remove("c");
             }
         }
         
         if(flag == 4) {
             if(check == true) {
-                listaMensaje[3] = valorDES;
+                listaMensaje.put("d", valorDES);
             }
             else {
-                listaMensaje[3] = "";
+                listaMensaje.remove("d");
             }
         }
         
         if(flag == 5) {
             if(check == true) {
-                listaMensaje[4] = valorCRB;
+                listaMensaje.put("e", valorCRB);
             }
             else {
-                listaMensaje[4] = "";
+                listaMensaje.remove("e");
             }
         }
         
