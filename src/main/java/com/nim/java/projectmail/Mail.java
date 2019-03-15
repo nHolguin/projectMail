@@ -11,7 +11,10 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.logging.Level;
@@ -46,6 +49,16 @@ public class Mail extends javax.swing.JFrame {
         valorCRB = mensaje.getCrbMensaje();
 
         initComponents();
+    }
+
+    private void initConfiguracionMensaje() {
+
+        arb.setText(valorARB);
+        cph.setText(valorCPH);
+        cps.setText(valorCPS);
+        des.setText(valorDES);
+        crb.setText(valorCRB);
+
     }
 
     private void copy(String copiar) {
@@ -283,26 +296,58 @@ public class Mail extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Respuestas", jPanel1);
 
+        jPanel2.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jPanel2AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
         jLabel1.setText("ARB");
 
-        arb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                arbActionPerformed(evt);
+        arb.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                arbFocusLost(evt);
             }
         });
 
         jLabel2.setText("CPH");
 
+        cph.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cphFocusLost(evt);
+            }
+        });
+
         jLabel3.setText("DES");
 
         des.setColumns(20);
         des.setRows(5);
+        des.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                desFocusLost(evt);
+            }
+        });
         jScrollPane1.setViewportView(des);
 
         jLabel4.setText("CPS");
 
+        cps.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cpsFocusLost(evt);
+            }
+        });
+
         jLabel5.setText("CRB");
 
+        crb.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                crbFocusLost(evt);
+            }
+        });
         crb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 crbActionPerformed(evt);
@@ -371,10 +416,6 @@ public class Mail extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void arbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_arbActionPerformed
 
     private void crbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crbActionPerformed
         // TODO add your handling code here:
@@ -552,6 +593,135 @@ public class Mail extends javax.swing.JFrame {
         eventoCheckbox(5);
     }//GEN-LAST:event_checkCRBActionPerformed
 
+    private void jPanel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel2AncestorAdded
+        // TODO add your handling code here:
+        initConfiguracionMensaje();
+    }//GEN-LAST:event_jPanel2AncestorAdded
+
+    private void actualizarCampos() {
+        
+        valorARB = arb.getText();
+        valorCPH = cph.getText();
+        valorCPS = cps.getText();
+        valorDES = des.getText();
+        valorCRB = crb.getText();
+        
+        arb.setText(valorARB);
+        cph.setText(valorCPH);
+        cps.setText(valorCPS);
+        des.setText(valorDES);
+        crb.setText(valorCRB);
+        
+        
+    }
+    
+    private void arbFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_arbFocusLost
+
+        // TODO add your handling code here:
+        int id = 1;
+        MensajeDAO mDao = new MensajeDAO();
+        Mensaje m = new Mensaje();
+
+        m.setIdMensaje(id);
+        m.setArbMensaje(arb.getText());
+        m.setCphMensaje(cph.getText());
+        m.setCpsMensaje(cps.getText());
+        m.setDesMensaje(des.getText());
+        m.setCrbMensaje(crb.getText());
+
+        try {
+            mDao.editar(m);
+            actualizarCampos();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_arbFocusLost
+
+    private void cphFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cphFocusLost
+        // TODO add your handling code here:
+        int id = 1;
+        MensajeDAO mDao = new MensajeDAO();
+        Mensaje m = new Mensaje();
+
+        m.setIdMensaje(id);
+        m.setArbMensaje(arb.getText());
+        m.setCphMensaje(cph.getText());
+        m.setCpsMensaje(cps.getText());
+        m.setDesMensaje(des.getText());
+        m.setCrbMensaje(crb.getText());
+
+        try {
+            mDao.editar(m);
+            actualizarCampos();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_cphFocusLost
+
+    private void cpsFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpsFocusLost
+        // TODO add your handling code here:
+        int id = 1;
+        MensajeDAO mDao = new MensajeDAO();
+        Mensaje m = new Mensaje();
+
+        m.setIdMensaje(id);
+        m.setArbMensaje(arb.getText());
+        m.setCphMensaje(cph.getText());
+        m.setCpsMensaje(cps.getText());
+        m.setDesMensaje(des.getText());
+        m.setCrbMensaje(crb.getText());
+
+        try {
+            mDao.editar(m);
+            actualizarCampos();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_cpsFocusLost
+
+    private void desFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_desFocusLost
+        // TODO add your handling code here:
+        int id = 1;
+        MensajeDAO mDao = new MensajeDAO();
+        Mensaje m = new Mensaje();
+
+        m.setIdMensaje(id);
+        m.setArbMensaje(arb.getText());
+        m.setCphMensaje(cph.getText());
+        m.setCpsMensaje(cps.getText());
+        m.setDesMensaje(des.getText());
+        m.setCrbMensaje(crb.getText());
+
+        try {
+            mDao.editar(m);
+            actualizarCampos();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_desFocusLost
+
+    private void crbFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_crbFocusLost
+        // TODO add your handling code here:
+        int id = 1;
+        MensajeDAO mDao = new MensajeDAO();
+        Mensaje m = new Mensaje();
+
+        m.setIdMensaje(id);
+        m.setArbMensaje(arb.getText());
+        m.setCphMensaje(cph.getText());
+        m.setCpsMensaje(cps.getText());
+        m.setDesMensaje(des.getText());
+        m.setCrbMensaje(crb.getText());
+
+        try {
+            mDao.editar(m);
+            actualizarCampos();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_crbFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -600,7 +770,6 @@ public class Mail extends javax.swing.JFrame {
 
                 mail.setVisible(true);
 
-                //new Mail().setVisible(true);
             }
         });
     }
