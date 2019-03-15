@@ -30,7 +30,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jTabbedPane1" min="-2" pref="466" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,40 +52,37 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" pref="250" max="-2" attributes="0"/>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" min="-2" pref="250" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="checkARB" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkCPH" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkCPS" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkDES" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkCRB" min="-2" max="-2" attributes="0"/>
+                          <Component id="limpiarTodo" min="-2" max="-2" attributes="0"/>
+                          <Component id="limpiarRecibido" min="-2" max="-2" attributes="0"/>
+                          <Component id="limpiarEnviar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                      <Component id="pegar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                                      <Component id="copiar" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="checkARB" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkCPH" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkCPS" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkDES" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkCRB" min="-2" max="-2" attributes="0"/>
-                                  <Component id="limpiarTodo" min="-2" max="-2" attributes="0"/>
-                                  <Component id="limpiarRecibido" min="-2" max="-2" attributes="0"/>
-                                  <Component id="limpiarEnviar" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="pegar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="237" max="-2" attributes="0"/>
+                              <Component id="copiar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -118,14 +115,14 @@
                               <Component id="limpiarRecibido" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="limpiarEnviar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="140" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="128" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane4" max="32767" attributes="0"/>
                                   <Component id="jScrollPane3" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="pegar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="copiar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -174,6 +171,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="copiar">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Copiar"/>
               </Properties>
               <Events>
@@ -182,6 +182,12 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkARB">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="ARB"/>
               </Properties>
               <Events>
@@ -190,6 +196,12 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkCPH">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CPH"/>
               </Properties>
               <Events>
@@ -198,6 +210,12 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkCPS">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CPS"/>
               </Properties>
               <Events>
@@ -206,6 +224,12 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkDES">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="DES"/>
               </Properties>
               <Events>
@@ -214,6 +238,12 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkCRB">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CRB"/>
               </Properties>
               <Events>
@@ -222,6 +252,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="pegar">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Pegar"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
@@ -231,7 +264,11 @@
             </Component>
             <Component class="javax.swing.JButton" name="limpiarTodo">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar Todo"/>
+                <Property name="toolTipText" type="java.lang.String" value="Limpiar Todos Los Campos"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiarTodoActionPerformed"/>
@@ -239,17 +276,35 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="24" style="3"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Recibido"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="24" style="3"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Enviar"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="limpiarRecibido">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="10" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar Recibido"/>
+                <Property name="toolTipText" type="java.lang.String" value="Limpiar Solo Campo Recibido"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiarRecibidoActionPerformed"/>
@@ -257,7 +312,11 @@
             </Component>
             <Component class="javax.swing.JButton" name="limpiarEnviar">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar Enviar"/>
+                <Property name="toolTipText" type="java.lang.String" value="Limpiar Solo Campo Enviar"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiarEnviarActionPerformed"/>
@@ -294,7 +353,7 @@
                           <Component id="cps" alignment="0" max="32767" attributes="0"/>
                           <Component id="crb" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="52" max="32767" attributes="0"/>
+                      <EmptySpace pref="250" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

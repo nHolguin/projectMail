@@ -147,6 +147,7 @@ public class Mail extends javax.swing.JFrame {
         enviar.setWrapStyleWord(true);
         jScrollPane4.setViewportView(enviar);
 
+        copiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         copiar.setText("Copiar");
         copiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +155,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkARB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkARB.setForeground(new java.awt.Color(0, 0, 102));
         checkARB.setText("ARB");
         checkARB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,6 +164,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkCPH.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkCPH.setForeground(new java.awt.Color(0, 0, 102));
         checkCPH.setText("CPH");
         checkCPH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +173,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkCPS.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkCPS.setForeground(new java.awt.Color(0, 0, 102));
         checkCPS.setText("CPS");
         checkCPS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,6 +182,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkDES.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkDES.setForeground(new java.awt.Color(0, 0, 102));
         checkDES.setText("DES");
         checkDES.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +191,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkCRB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkCRB.setForeground(new java.awt.Color(0, 0, 102));
         checkCRB.setText("CRB");
         checkCRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,6 +200,7 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        pegar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         pegar.setText("Pegar");
         pegar.setToolTipText("");
         pegar.addActionListener(new java.awt.event.ActionListener() {
@@ -197,25 +209,37 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        limpiarTodo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         limpiarTodo.setText("Limpiar Todo");
+        limpiarTodo.setToolTipText("Limpiar Todos Los Campos");
         limpiarTodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limpiarTodoActionPerformed(evt);
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Recibido");
 
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Enviar");
 
+        limpiarRecibido.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         limpiarRecibido.setText("Limpiar Recibido");
+        limpiarRecibido.setToolTipText("Limpiar Solo Campo Recibido");
         limpiarRecibido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limpiarRecibidoActionPerformed(evt);
             }
         });
 
+        limpiarEnviar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         limpiarEnviar.setText("Limpiar Enviar");
+        limpiarEnviar.setToolTipText("Limpiar Solo Campo Enviar");
         limpiarEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limpiarEnviarActionPerformed(evt);
@@ -227,34 +251,33 @@ public class Mail extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkARB)
+                    .addComponent(checkCPH)
+                    .addComponent(checkCPS)
+                    .addComponent(checkDES)
+                    .addComponent(checkCRB)
+                    .addComponent(limpiarTodo)
+                    .addComponent(limpiarRecibido)
+                    .addComponent(limpiarEnviar))
+                .addGap(16, 16, 16))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(pegar)
-                                .addGap(135, 135, 135)
-                                .addComponent(copiar))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkARB)
-                            .addComponent(checkCPH)
-                            .addComponent(checkCPS)
-                            .addComponent(checkDES)
-                            .addComponent(checkCRB)
-                            .addComponent(limpiarTodo)
-                            .addComponent(limpiarRecibido)
-                            .addComponent(limpiarEnviar)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                        .addGap(88, 88, 88)
                         .addComponent(jLabel6)
-                        .addGap(156, 156, 156)
-                        .addComponent(jLabel7)))
+                        .addGap(219, 219, 219)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(pegar)
+                        .addGap(237, 237, 237)
+                        .addComponent(copiar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -282,12 +305,12 @@ public class Mail extends javax.swing.JFrame {
                         .addComponent(limpiarRecibido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(limpiarEnviar)
-                        .addGap(0, 140, Short.MAX_VALUE))
+                        .addGap(0, 128, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4)
                             .addComponent(jScrollPane3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pegar)
                             .addComponent(copiar))))
@@ -371,7 +394,7 @@ public class Mail extends javax.swing.JFrame {
                     .addComponent(cph)
                     .addComponent(cps)
                     .addComponent(crb))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,7 +434,7 @@ public class Mail extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         pack();
