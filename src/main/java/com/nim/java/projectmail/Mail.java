@@ -29,8 +29,8 @@ public class Mail extends javax.swing.JFrame {
     private String valorCPS = "Este es un texto del slack";
     private String valorDES = "Este es un textp de desocupados";
     private String valorCRB = "Este es un texto que cierra la cabecera";
-    private Hashtable <String, String> listaMensaje = new Hashtable<String, String>();
- 
+    private Hashtable<String, String> listaMensaje = new Hashtable<String, String>();
+
     private void copy(String copiar) {
 
         StringSelection selection = new StringSelection(copiar);
@@ -373,10 +373,20 @@ public class Mail extends javax.swing.JFrame {
         recibido.setText(paste());
     }//GEN-LAST:event_pegarActionPerformed
 
+    private void limpiarCheck() {
+        checkARB.setSelected(false);
+        checkCPH.setSelected(false);
+        checkCPS.setSelected(false);
+        checkDES.setSelected(false);
+        checkCRB.setSelected(false);
+    }
+    
     private void limpiarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarTodoActionPerformed
         // TODO add your handling code here:
         enviar.setText("");
         recibido.setText("");
+        limpiarCheck();
+        listaMensaje.clear();
 
     }//GEN-LAST:event_limpiarTodoActionPerformed
 
@@ -388,29 +398,31 @@ public class Mail extends javax.swing.JFrame {
     private void limpiarEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarEnviarActionPerformed
         // TODO add your handling code here:
         enviar.setText("");
+        limpiarCheck();
+        listaMensaje.clear();
     }//GEN-LAST:event_limpiarEnviarActionPerformed
 
     private void mostrarMensaje() {
-        
+
         String mensaje = "";
         String[] claves = (String[]) listaMensaje.keySet().toArray(new String[0]);
-        
+
         java.util.Arrays.sort(claves);
-        
-        for(String clave: claves) {
-            if(clave == "a") {
-                mensaje += listaMensaje.get(clave)+"\n\n";
-            }
-            else {
-                mensaje += listaMensaje.get(clave)+"\n\n";
+
+        for (String clave : claves) {
+            if (clave == "a") {
+                mensaje += listaMensaje.get(clave) + "\n\n";
+            } else {
+                mensaje += listaMensaje.get(clave) + "\n\n";
             }
         }
-        
+
         enviar.setText(mensaje);
-        
+
     }
+
     private void eventoCheckbox(int flag) {
-        
+
         boolean check = false;
 
         switch (flag) {
@@ -427,7 +439,7 @@ public class Mail extends javax.swing.JFrame {
                 } else if (checkCPH.isSelected() == false) {
                     check = false;
                 }
-            break;
+                break;
             case 3:
                 if (checkCPS.isSelected() == true) {
                     check = true;
@@ -441,7 +453,7 @@ public class Mail extends javax.swing.JFrame {
                 } else if (checkDES.isSelected() == false) {
                     check = false;
                 }
-            break;
+                break;
             case 5:
                 if (checkCRB.isSelected() == true) {
                     check = true;
@@ -451,51 +463,46 @@ public class Mail extends javax.swing.JFrame {
                 break;
         }
 
-        if(flag == 1) {
-            if(check == true) {
-                listaMensaje.put("a",valorARB);
-            }
-            else {
+        if (flag == 1) {
+            if (check == true) {
+                listaMensaje.put("a", valorARB);
+            } else {
                 listaMensaje.remove("a");
             }
         }
-        
-        if(flag == 2) {
-            if(check == true) {
-                listaMensaje.put("b",valorCPH);
-            }
-            else {
+
+        if (flag == 2) {
+            if (check == true) {
+                listaMensaje.put("b", valorCPH);
+            } else {
                 listaMensaje.remove("b");
             }
         }
-        
-        if(flag == 3) {
-            if(check == true) {
+
+        if (flag == 3) {
+            if (check == true) {
                 listaMensaje.put("c", valorCPS);
-            }
-            else {
+            } else {
                 listaMensaje.remove("c");
             }
         }
-        
-        if(flag == 4) {
-            if(check == true) {
+
+        if (flag == 4) {
+            if (check == true) {
                 listaMensaje.put("d", valorDES);
-            }
-            else {
+            } else {
                 listaMensaje.remove("d");
             }
         }
-        
-        if(flag == 5) {
-            if(check == true) {
+
+        if (flag == 5) {
+            if (check == true) {
                 listaMensaje.put("e", valorCRB);
-            }
-            else {
+            } else {
                 listaMensaje.remove("e");
             }
         }
-        
+
         mostrarMensaje();
         //JOptionPane.showMessageDialog(null, listaMensaje);
 
