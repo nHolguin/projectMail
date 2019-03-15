@@ -1,5 +1,7 @@
 package com.nim.java.projectmail;
 
+import com.nim.java.dao.MensajeDAO;
+import com.nim.java.model.Mensaje;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -9,6 +11,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.logging.Level;
@@ -17,19 +20,33 @@ import javax.swing.JOptionPane;
 
 public class Mail extends javax.swing.JFrame {
 
+    private String valorARB;
+    private String valorCPH;
+    private String valorCPS;
+    private String valorDES;
+    private String valorCRB;
+    private Hashtable<String, String> listaMensaje = new Hashtable<String, String>();
+    MensajeDAO mensajeDao = new MensajeDAO();
+    Mensaje mensaje = new Mensaje();
+
     /**
      * Creates new form Mail
      */
     public Mail() {
+
+        try {
+            mensaje = mensajeDao.obtenerMensaje(1);
+        } catch (SQLException ex) {
+            Logger.getLogger(Mail.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        valorARB = mensaje.getArbMensaje();
+        valorCPH = mensaje.getCphMensaje();
+        valorCPS = mensaje.getCpsMensaje();
+        valorDES = mensaje.getDesMensaje();
+        valorCRB = mensaje.getCrbMensaje();
+
         initComponents();
     }
-
-    private String valorARB = "Este es un texto que abre la cabecera";
-    private String valorCPH = "Este es un texto que indica la documentación específica";
-    private String valorCPS = "Este es un texto del slack";
-    private String valorDES = "Este es un textp de desocupados";
-    private String valorCRB = "Este es un texto que cierra la cabecera";
-    private Hashtable<String, String> listaMensaje = new Hashtable<String, String>();
 
     private void copy(String copiar) {
 
@@ -380,7 +397,7 @@ public class Mail extends javax.swing.JFrame {
         checkDES.setSelected(false);
         checkCRB.setSelected(false);
     }
-    
+
     private void limpiarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarTodoActionPerformed
         // TODO add your handling code here:
         enviar.setText("");
@@ -425,6 +442,7 @@ public class Mail extends javax.swing.JFrame {
 
         boolean check = false;
 
+        //JOptionPane.showMessageDialog(null, mensaje.getArbMensaje());
         switch (flag) {
             case 1:
                 if (checkARB.isSelected() == true) {
