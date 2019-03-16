@@ -808,10 +808,10 @@ public class Mail extends javax.swing.JFrame {
             public void run() {
 
                 Toolkit pantalla = Toolkit.getDefaultToolkit();
-                Dimension tamanioPantalla = pantalla.getScreenSize();
+                //Dimension tamanioPantalla = pantalla.getScreenSize();
 
-                int altoPantalla = tamanioPantalla.height;
-                int anchoPantalla = tamanioPantalla.width;
+                //int altoPantalla = tamanioPantalla.height;
+                //int anchoPantalla = tamanioPantalla.width;
 
                 //setSize(anchoPantalla / 2, altoPantalla / 2);
                 Mail mail = new Mail();
