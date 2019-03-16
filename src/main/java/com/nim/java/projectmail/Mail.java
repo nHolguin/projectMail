@@ -366,15 +366,12 @@ public class Mail extends javax.swing.JFrame {
         jLabel3.setText("DES");
 
         des.setColumns(20);
-<<<<<<< HEAD
         des.setLineWrap(true);
         des.setRows(5);
         des.setWrapStyleWord(true);
-=======
         des.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         des.setRows(5);
         des.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
->>>>>>> PM-Cambios
         des.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 desFocusLost(evt);
@@ -426,11 +423,7 @@ public class Mail extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3))
-<<<<<<< HEAD
-                        .addGap(0, 457, Short.MAX_VALUE))
-=======
                         .addGap(0, 646, Short.MAX_VALUE))
->>>>>>> PM-Cambios
                     .addComponent(cph)
                     .addComponent(cps)
                     .addComponent(jScrollPane1)
@@ -818,7 +811,12 @@ public class Mail extends javax.swing.JFrame {
             public void run() {
 
                 Toolkit pantalla = Toolkit.getDefaultToolkit();
-                
+                //Dimension tamanioPantalla = pantalla.getScreenSize();
+
+                //int altoPantalla = tamanioPantalla.height;
+                //int anchoPantalla = tamanioPantalla.width;
+
+                //setSize(anchoPantalla / 2, altoPantalla / 2);
                 Mail mail = new Mail();
                 mail.setTitle("App Mail");
 
@@ -826,6 +824,7 @@ public class Mail extends javax.swing.JFrame {
                 mail.setIconImage(icono);
 
                 mail.setLocationRelativeTo(null);
+                //mail.setLocation(anchoPantalla / 4, altoPantalla / 4);
 
                 mail.setVisible(true);
 
