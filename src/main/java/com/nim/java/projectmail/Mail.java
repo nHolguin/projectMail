@@ -136,17 +136,22 @@ public class Mail extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         recibido.setColumns(20);
+        recibido.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         recibido.setLineWrap(true);
         recibido.setRows(5);
         recibido.setWrapStyleWord(true);
+        recibido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane3.setViewportView(recibido);
 
         enviar.setColumns(20);
+        enviar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         enviar.setLineWrap(true);
         enviar.setRows(5);
         enviar.setWrapStyleWord(true);
+        enviar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane4.setViewportView(enviar);
 
+        copiar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         copiar.setText("Copiar");
         copiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +159,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkARB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkARB.setForeground(new java.awt.Color(0, 0, 102));
         checkARB.setText("ARB");
         checkARB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,6 +168,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkCPH.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkCPH.setForeground(new java.awt.Color(0, 0, 102));
         checkCPH.setText("CPH");
         checkCPH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +177,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkCPS.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkCPS.setForeground(new java.awt.Color(0, 0, 102));
         checkCPS.setText("CPS");
         checkCPS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,6 +186,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkDES.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkDES.setForeground(new java.awt.Color(0, 0, 102));
         checkDES.setText("DES");
         checkDES.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +195,8 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        checkCRB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        checkCRB.setForeground(new java.awt.Color(0, 0, 102));
         checkCRB.setText("CRB");
         checkCRB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,6 +204,7 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        pegar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         pegar.setText("Pegar");
         pegar.setToolTipText("");
         pegar.addActionListener(new java.awt.event.ActionListener() {
@@ -197,25 +213,37 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        limpiarTodo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         limpiarTodo.setText("Limpiar Todo");
+        limpiarTodo.setToolTipText("Limpiar Todos Los Campos");
         limpiarTodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limpiarTodoActionPerformed(evt);
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Recibido");
 
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Enviar");
 
+        limpiarRecibido.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         limpiarRecibido.setText("Limpiar Recibido");
+        limpiarRecibido.setToolTipText("Limpiar Solo Campo Recibido");
         limpiarRecibido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limpiarRecibidoActionPerformed(evt);
             }
         });
 
+        limpiarEnviar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         limpiarEnviar.setText("Limpiar Enviar");
+        limpiarEnviar.setToolTipText("Limpiar Solo Campo Enviar");
         limpiarEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limpiarEnviarActionPerformed(evt);
@@ -227,19 +255,12 @@ public class Mail extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(pegar)
-                                .addGap(135, 135, 135)
-                                .addComponent(copiar))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(checkARB)
@@ -248,13 +269,23 @@ public class Mail extends javax.swing.JFrame {
                             .addComponent(checkDES)
                             .addComponent(checkCRB)
                             .addComponent(limpiarTodo)
-                            .addComponent(limpiarRecibido)
                             .addComponent(limpiarEnviar)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(limpiarRecibido)))
+                .addGap(24, 24, 24))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
                         .addComponent(jLabel6)
-                        .addGap(156, 156, 156)
-                        .addComponent(jLabel7)))
+                        .addGap(194, 194, 194)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(pegar)
+                        .addGap(206, 206, 206)
+                        .addComponent(copiar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -282,12 +313,12 @@ public class Mail extends javax.swing.JFrame {
                         .addComponent(limpiarRecibido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(limpiarEnviar)
-                        .addGap(0, 140, Short.MAX_VALUE))
+                        .addGap(0, 136, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4)
                             .addComponent(jScrollPane3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pegar)
                             .addComponent(copiar))))
@@ -306,28 +337,44 @@ public class Mail extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("ARB");
 
+        arb.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        arb.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         arb.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 arbFocusLost(evt);
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
         jLabel2.setText("CPH");
 
+        cph.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        cph.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cph.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cphFocusLost(evt);
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("DES");
 
         des.setColumns(20);
+<<<<<<< HEAD
         des.setLineWrap(true);
         des.setRows(5);
         des.setWrapStyleWord(true);
+=======
+        des.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        des.setRows(5);
+        des.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+>>>>>>> PM-Cambios
         des.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 desFocusLost(evt);
@@ -335,16 +382,24 @@ public class Mail extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(des);
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
         jLabel4.setText("CPS");
 
+        cps.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        cps.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cps.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cpsFocusLost(evt);
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
         jLabel5.setText("CRB");
 
+        crb.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        crb.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         crb.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 crbFocusLost(evt);
@@ -371,7 +426,11 @@ public class Mail extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3))
+<<<<<<< HEAD
                         .addGap(0, 457, Short.MAX_VALUE))
+=======
+                        .addGap(0, 646, Short.MAX_VALUE))
+>>>>>>> PM-Cambios
                     .addComponent(cph)
                     .addComponent(cps)
                     .addComponent(jScrollPane1)
@@ -381,30 +440,30 @@ public class Mail extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(arb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cph, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(crb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
 
-        jTabbedPane1.addTab("Configuracion", jPanel2);
+        jTabbedPane1.addTab("Configuración", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -416,7 +475,7 @@ public class Mail extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         pack();
@@ -759,19 +818,14 @@ public class Mail extends javax.swing.JFrame {
             public void run() {
 
                 Toolkit pantalla = Toolkit.getDefaultToolkit();
-                Dimension tamanioPantalla = pantalla.getScreenSize();
-
-                int altoPantalla = tamanioPantalla.height;
-                int anchoPantalla = tamanioPantalla.width;
-
-                //setSize(anchoPantalla / 2, altoPantalla / 2);
+                
                 Mail mail = new Mail();
                 mail.setTitle("App Mail");
 
                 Image icono = pantalla.getImage("images/mail.png");
                 mail.setIconImage(icono);
 
-                mail.setLocation(anchoPantalla / 4, altoPantalla / 4);
+                mail.setLocationRelativeTo(null);
 
                 mail.setVisible(true);
 
